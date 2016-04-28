@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pirates Booty</title>
+    <script>
+    //loads the functions after the page has been loaded
+      window.onload = init;
+      // the function that is called after the page loads. This function is passed an event
+      function init(){
+        var map = document.getElementById("map");
+        map.onmousemove = showCoords;
+      }
+
+
+      //this is the event handle that is called
+      function showCoords(eventObj){
+        var coords = document.getElementById("coords");
+        var x = eventObj.clientX;
+        var y = eventObj.clientY;
+        coords.innerHTML = "Map coordinates: " + x + ", " + y;
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+    <img id = "map" src = "map.jpg">
+    <p id = "coords">
+      Move mouse over to see coordinates...
+    </p>
+  </body>
+</html>
